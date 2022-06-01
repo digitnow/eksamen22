@@ -29,12 +29,23 @@ Man kunne, for eksempel, lagt ut ALF_OPPG8 definisjon til mycrypt.go, og importe
 Man kunne også latt "KLIENT" og "KLIENT2" gå i "evig" løkke og implementere en input-mekanisme på "KLIENT". 
 
 ## Testing
-* Starte udp_server.go først i et kommandovindu. 
-* Starte udp_client2.go i et nytt kommandovindu.
+* Starte udp_server.go først i et kommandovindu (den må manuelt termineres med OS signal). 
+* Starte udp_client2.go i et nytt kommandovindu (den blokkerer).
 * Starte udp_client.go i et tredje kommandovindu. 
 
 Et mulig resultat: 
-* kommandovindu #3
+* kommandovindu #1 "SERVER"
+```
+$ go run udp_server.go 
+after s.ReadFrom
+
+```
+* kommandovindu #2 "KLIENT2"
+```
+$ go run udp_client2.go 
+Dekryptert melding: w, x og y møtes i ålesund
+```
+* kommandovindu #3 "KLIENT"
 ```
 $ go run udp_client.go 
 Kryptert melding: æcdødskdådqaxiwdmdbpiwyrh
