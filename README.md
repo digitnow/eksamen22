@@ -27,4 +27,15 @@ Refaktorering av kode er mulig.
 Man kunne, for eksempel, lagt ut ALF_OPPG8 definisjon til mycrypt.go, og importert den i "KLIENT", "SERVER" og "KLIENT2", slik at man kan endre alfabetet ett sted(kan legge til alle tall 0-9 og flere spesielle tegn).
 
 Man kunne også latt "KLIENT" og "KLIENT2" gå i "evig" løkke og implementere en input-mekanisme på "KLIENT". 
-# eksamen22
+
+## Testing
+* Starte udp_server.go først i et kommandovindu. 
+* Starte udp_client2.go i et nytt kommandovindu.
+* Starte udp_client.go i et tredje kommandovindu. 
+
+Et mulig resultat: 
+* kommandovindu #3
+```
+$ go run udp_client.go 
+Kryptert melding: æcdødskdådqaxiwdmdbpiwyrh
+```
